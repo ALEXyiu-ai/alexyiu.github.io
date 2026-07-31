@@ -1,367 +1,575 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Alex Yiu | Generative AI Consultant</title>
+  <title>Alex Yiu | Generative AI Consultant</title>
 
-<style>
+  <meta
+    name="description"
+    content="Alex Yiu helps organisations use Generative AI for content creation, AI video production, learning design and innovation."
+  />
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body{
-    font-family:Arial,sans-serif;
-    color:#333;
-    line-height:1.6;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-nav{
-    background:white;
-    text-align:center;
-    padding:18px;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 8px rgba(0,0,0,0.08);
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111827;
+      background: #ffffff;
+      line-height: 1.6;
+    }
 
-nav a{
-    margin:0 15px;
-    text-decoration:none;
-    color:#222;
-    font-weight:600;
-}
+    a {
+      color: inherit;
+    }
 
-nav a:hover{
-    color:#2563eb;
-}
+    /* Top Navigation */
+    nav {
+      background: #ffffff;
+      text-align: center;
+      padding: 16px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #e5e7eb;
+    }
 
-.hero{
-    background:#04163f;
-    color:white;
-    text-align:center;
-    padding:90px 20px;
-}
+    nav a {
+      display: inline-block;
+      margin: 0 14px;
+      text-decoration: none;
+      color: #111827;
+      font-weight: 500;
+      font-size: 16px;
+    }
 
-.hero img{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    object-fit:cover;
-    border:4px solid white;
-    margin-bottom:25px;
-}
+    nav a:hover {
+      color: #2563eb;
+    }
 
-.hero h1{
-    font-size:52px;
-    margin-bottom:15px;
-}
+    /* Hero Banner */
+    .hero {
+      background: #0f172a;
+      color: #ffffff;
+      text-align: center;
+      padding: 90px 20px 95px;
+    }
 
-.hero h3{
-    font-size:24px;
-    margin-bottom:20px;
-}
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ffffff;
+      margin-bottom: 28px;
+      background: #ffffff;
+    }
 
-.hero p{
-    font-size:18px;
-    max-width:800px;
-    margin:auto;
-    margin-bottom:35px;
-}
+    .hero h1 {
+      font-size: 44px;
+      line-height: 1.15;
+      margin-bottom: 22px;
+      font-weight: 700;
+    }
 
-.btn{
-    display:inline-block;
-    background:#2563eb;
-    color:black;
-    text-decoration:none;
-    padding:14px 24px;
-    border-radius:8px;
-    margin:5px;
-    font-weight:bold;
-}
+    .hero h2 {
+      font-size: 21px;
+      line-height: 1.4;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
 
-.btn:hover{
-    background:#1d4ed8;
-}
+    .hero p {
+      max-width: 780px;
+      margin: 0 auto 32px;
+      font-size: 18px;
+      color: #e5e7eb;
+    }
 
-.section{
-    max-width:1100px;
-    margin:auto;
-    padding:70px 20px;
-}
+    .button-group {
+      margin-top: 12px;
+    }
 
-.section h2{
-    margin-bottom:25px;
-}
+    .btn {
+      display: inline-block;
+      background: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 8px;
+      margin: 6px;
+      font-weight: 600;
+      font-size: 16px;
+      border: 1px solid #2563eb;
+    }
 
-.stats{
-    max-width:1200px;
-    margin:auto;
-    padding:50px 20px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-}
+    .btn:hover {
+      background: #1d4ed8;
+      border-color: #1d4ed8;
+    }
 
-.stat{
-    background:#f5f5f5;
-    padding:40px 20px;
-    border-radius:15px;
-    text-align:center;
-}
+    .btn.secondary {
+      background: transparent;
+      border-color: #ffffff;
+    }
 
-.stat h3{
-    font-size:40px;
-    color:#04163f;
-}
+    .btn.secondary:hover {
+      background: #ffffff;
+      color: #0f172a;
+    }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-}
+    /* Data Section */
+    .stats-section {
+      background: #ffffff;
+      padding: 58px 20px;
+    }
 
-.card{
-    border:1px solid #ddd;
-    border-radius:12px;
-    padding:25px;
-}
+    .stats {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
 
-.card h3{
-    margin-bottom:15px;
-}
+    .stat {
+      background: #f3f4f6;
+      border-radius: 14px;
+      padding: 40px 20px;
+      text-align: center;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
-.video{
-    text-align:center;
-}
+    .stat h3 {
+      font-size: 36px;
+      color: #0f172a;
+      margin-bottom: 16px;
+    }
 
-.video iframe{
-    width:100%;
-    max-width:900px;
-    height:500px;
-}
+    .stat p {
+      font-size: 16px;
+      color: #374151;
+    }
 
-.contact-links a{
-    display:block;
-    margin:10px 0;
-    color:#2563eb;
-}
+    /* General Sections */
+    .section {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 70px 20px;
+    }
 
-footer{
-    background:#04163f;
-    color:white;
-    text-align:center;
-    padding:40px;
-}
+    .section h2 {
+      font-size: 30px;
+      margin-bottom: 24px;
+      color: #0f172a;
+    }
 
-@media(max-width:768px){
+    .section p {
+      margin-bottom: 16px;
+      font-size: 17px;
+    }
 
-.hero h1{
-    font-size:36px;
-}
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 24px;
+    }
 
-.hero h3{
-    font-size:20px;
-}
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 26px;
+      background: #ffffff;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
 
-.video iframe{
-    height:250px;
-}
+    .card h3 {
+      color: #0f172a;
+      margin-bottom: 14px;
+      font-size: 21px;
+    }
 
-}
+    .card ul {
+      padding-left: 20px;
+    }
 
-</style>
+    .card li {
+      margin-bottom: 8px;
+    }
+
+    /* Portfolio */
+    .portfolio-box {
+      background: #f9fafb;
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .video-frame {
+      margin-top: 20px;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      background: #111827;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .video-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Contact */
+    .contact-box {
+      background: #0f172a;
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 34px;
+    }
+
+    .contact-box h2 {
+      color: #ffffff;
+    }
+
+    .contact-list {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .contact-list li {
+      margin-bottom: 14px;
+      font-size: 17px;
+    }
+
+    .contact-list a {
+      color: #93c5fd;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .contact-list a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #111827;
+      color: #ffffff;
+      text-align: center;
+      padding: 34px 20px;
+      font-size: 15px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 900px) {
+      .stats,
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav a {
+        margin: 6px 8px;
+        font-size: 14px;
+      }
+
+      .hero {
+        padding: 70px 18px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero h2 {
+        font-size: 18px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .profile-photo {
+        width: 120px;
+        height: 120px;
+      }
+
+      .stats,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 55px 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<nav>
-#aboutAbout</a>
-#services
-<a hreflio
-#contact>
-</nav>
+  <!-- Top Menu -->
+  <nav>
+    #aboutAbout</a>
+    #servicesServices</a>
+    #portfolioPortfolio</a>
+    #contactContact</a>
+  </nav>
 
-<section class="hero">
+  <!-- Hero Banner -->
+  <header class="hero">
 
-<!-- Upload alex.jpg to repository -->
+    <!-- Your photo file in GitHub must be named ALEX.jpg -->
+    <img src="ALEX.jpg" alt="Alex Yiu" class="profile-photo" />
 
-<img src="ALEX.jpg" alt="Alex Yiu">
+    <h1>Alex Yiu</h1>
 
-<h1>Alex Yiu</h1>
+    <h2>
+      Generative AI Consultant | Trainer | Creative Innovation Specialist
+    </h2>
 
-<h3>
-Generative AI Consultant |
-Trainer |
-Creative Innovation Specialist
-</h3>
+    <p>
+      Helping organisations create better content, videos and learning experiences with AI.
+    </p>
 
-<p>
-Helping organisations create better content,
-videos and learning experiences with AI.
-</p>
+    <div class="button-group">
+      #contactBook a Workshop</a>
+      #contactSchedule a Consultation</a>
+    </div>
 
-contact">
-Book a Workshop
-</a>
+  </header>
 
-<a class
+  <!-- Data Section -->
+  <section class="stats-section" aria-label="Professional highlights">
 
-</section>
+    <div class="stats">
 
-<section class="stats">
+      <div class="stat">
+        <h3>26+</h3>
+        <p>Years Design Experience</p>
+      </div>
 
-<div class="stat">
-<h3>26+</h3>
-<p>Years Design Experience</p>
-</div>
+      <div class="stat">
+        <h3>4+</h3>
+        <p>Years GenAI Focus</p>
+      </div>
 
-<div class="stat">
-<h3>4+</h3>
-<p>Years GenAI Focus</p>
-</div>
+      <div class="stat">
+        <h3>30+</h3>
+        <p>Workshops & Seminars</p>
+      </div>
 
-<div class="stat">
-<h3>30+</h3>
-<p>Workshops & Seminars</p>
-</div>
+      <div class="stat">
+        <h3>1000+</h3>
+        <p>Learners Reached</p>
+      </div>
 
-<div class="stat">
-<h3>1000+</h3>
-<p>Learners Reached</p>
-</div>
+    </div>
 
-</section>
+  </section>
 
-<section id="about" class="section">
+  <!-- About Section -->
+  <section id="about" class="section">
 
-<h2>About 關於我</h2>
+    <h2>About 關於我</h2>
 
-<p>
-PolyU School of Design Graduate.
-Former Manager of AI & Innovation Lab at HKPC.
-26 years of experience in Design, Learning,
-Innovation and Digital Media.
-</p>
+    <p>
+      <strong>EN:</strong>
+      PolyU School of Design graduate with 26 years of design experience and former Manager of AI &amp; Innovation Lab at HKPC.
+      Specialised in Generative AI training, AI video production, storytelling and creative workflow.
+    </p>
 
-<br>
+    <p>
+      <strong>中文：</strong>
+      香港理工大學設計學院畢業，擁有26年設計經驗，曾任香港生產力促進局 AI &amp; Innovation Lab Manager，
+      專注生成式AI培訓、AI影片製作、敘事設計及創意工作流程。
+    </p>
 
-<p>
-香港理工大學設計學院畢業。
-曾任香港生產力促進局 AI & Innovation Lab Manager。
-擁有26年以上設計及創新經驗。
-專注生成式AI、AI影片製作、故事敘事及創意工作流程。
-</p>
+  </section>
 
-</section>
+  <!-- Services Section -->
+  <section id="services" class="section">
 
-<section id="services" class="section">
+    <h2>Services 服務</h2>
 
-<h2>Services 服務</h2>
+    <div class="cards">
 
-<div class="cards">
+      <div class="card">
+        <h3>Corporate AI Training</h3>
+        <ul>
+          <li>Generative AI fundamentals</li>
+          <li>AI for managers and teams</li>
+          <li>Microsoft Copilot introduction</li>
+          <li>Practical AI productivity workflows</li>
+        </ul>
+      </div>
 
-<div class="card">
-<h3>Corporate Training</h3>
+      <div class="card">
+        <h3>AI Creative Workshop</h3>
+        <ul>
+          <li>AI video production</li>
+          <li>AI trailer creation</li>
+          <li>AI Reels and short-form content</li>
+          <li>AI storytelling and visual workflow</li>
+        </ul>
+      </div>
 
-<p>
-• GenAI Fundamentals<br>
-• AI for Managers<br>
-• Microsoft Copilot<br>
-• AI Productivity
-</p>
+      <div class="card">
+        <h3>AI Consulting</h3>
+        <ul>
+          <li>AI adoption planning</li>
+          <li>Creative workflow design</li>
+          <li>Innovation facilitation</li>
+          <li>AI content pipeline development</li>
+        </ul>
+      </div>
 
-</div>
+    </div>
 
-<div class="card">
+  </section>
 
-<h3>AI Creative Workshop</h3>
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="section">
 
-<p>
-• AI Trailer Creation<br>
-• AI Reels Production<br>
-• AI Storytelling<br>
-• AI Video Production
-</p>
+    <h2>Portfolio 作品</h2>
 
-</div>
+    <div class="portfolio-box">
 
-<div class="card">
+      <p>
+        Explore AI video experiments, tutorials and creative workflow demonstrations on YouTube.
+      </p>
 
-<h3>Consulting Service</h3>
+      <a
+        href="https://www.youtube.com/@AlexzYIU"
+        target="_blank"
+        rel="noopener"
+        class="btn"
+      >
+        Visit YouTube Channel
+      </a>
 
-<p>
-• AI Strategy<br>
-• Workflow Design<br>
-• Innovation Facilitation<br>
-• AI Adoption Planning
-</p>
+      <!--
+      Optional YouTube Embed
 
-</div>
+      To embed a video:
+      1. Find a YouTube video URL, for example:
+         https://www.youtube.com/watch?v=ABC123XYZ
 
-</div>
+      2. Copy the video ID:
+         ABC123XYZ
 
-</section>
+      3. Replace YOUTUBE_VIDEO_ID below.
 
-<section id="portfolio" class="section">
+      4. Remove this comment block and keep the iframe section.
 
-<h2>Featured Video</h2>
+      <div class="video-frame">
+        https://www.youtube.com/embed/YOUTUBE_VIDEO_ID
+        </iframe>
+      </div>
+      -->
 
-<p>
-Replace VIDEOID below with your YouTube video ID.
-</p>
+    </div>
 
-<div class="video">
+  </section>
 
-<iframe
-src="https://www.youtube.com/embed/VIDEOIDection>
+  <!-- Course Brochure PDF -->
+  <section class="section">
 
-<section class="section">
+    <h2>Course Brochure 課程簡介</h2>
 
-<h2>Course Brochure</h2>
+    <p>
+      Download the AI course catalogue for corporate training, school workshops, NGO programmes and creative AI sessions.
+    </p>
 
-<p>
-Download my latest AI Training Catalogue.
-</p>
+    <!-- Your PDF file in GitHub must be named AI_Course_Catalogue.pdf -->
+    AI_Course_Catalogue.pdf
+      Download Course Brochure PDF
+    </a>
 
-AI_Course_Catalogue.pdf
+  </section>
 
-</section>
+  <!-- Contact Section -->
+  <section id="contact" class="section">
 
-<section id="contact" class="section">
+    <div class="contact-box">
 
-<h2>Contact Alex</h2>
+      <h2>Contact Alex 聯絡 Alex</h2>
 
-<div class="contact-links">
+      <p>
+        Let’s discuss how Generative AI can support your organisation, school, NGO or training programme.
+      </p>
 
-hello@alexyiu.com
+      <ul class="contact-list">
 
-https://youtube.com/@AlexzYIU
+        <li>
+          Email:
+          hello@alexyiu.com
+            hello@alexyiu.com
+          </a>
+        </li>
 
-https://linkedin.com
+        <li>
+          YouTube:
+          <a
+            href="https://www.youtube.com/@AlexzYIU"
+            target="_blank"
+            rel="noopener"
+          >
+            youtube.com/@AlexzYIU
+          </a>
+        </li>
 
-https://wa.me/85292061440
+        <li>
+          LinkedIn:
+          https://www.linkedin.com/
+            Add your LinkedIn profile URL here
+          </a>
+        </li>
 
-</div>
+        <li>
+          WhatsApp:
+          https://wa.me/85291234567
+            Message Alex on WhatsApp
+          </a>
+        </li>
 
-</section>
+      </ul>
 
-<footer>
+      <div class="button-group">
+        hello@alexyiu.com
+          Contact Alex
+        </a>
 
-<p>
-Alex Yiu
-</p>
+        https://wa.me/85292061440
+          WhatsApp Alex
+        </a>
+      </div>
 
-<p>
-Generative AI Consultant • Trainer • Speaker
-</p>
+    </div>
 
-</footer>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      © Alex Yiu | Generative AI Consultant • Trainer • Creative Innovation Specialist
+    </p>
+  </footer>
 
 </body>
 </html>
