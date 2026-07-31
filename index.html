@@ -29,12 +29,8 @@
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-    }
-
-    /* Top Navigation */
-    nav {
+    /* Top Menu */
+    .top-menu {
       background: #ffffff;
       text-align: center;
       padding: 16px 20px;
@@ -44,16 +40,16 @@
       border-bottom: 1px solid #e5e7eb;
     }
 
-    nav a {
+    .top-menu a {
       display: inline-block;
-      margin: 0 14px;
+      margin: 0 16px;
       text-decoration: none;
       color: #111827;
       font-weight: 500;
       font-size: 16px;
     }
 
-    nav a:hover {
+    .top-menu a:hover {
       color: #2563eb;
     }
 
@@ -111,6 +107,7 @@
       font-weight: 600;
       font-size: 16px;
       border: 1px solid #2563eb;
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -118,14 +115,16 @@
       border-color: #1d4ed8;
     }
 
-    .btn.secondary {
+    .btn-outline {
       background: transparent;
-      border-color: #ffffff;
+      border: 1px solid #ffffff;
+      color: #ffffff;
     }
 
-    .btn.secondary:hover {
+    .btn-outline:hover {
       background: #ffffff;
       color: #0f172a;
+      border-color: #ffffff;
     }
 
     /* Data Section */
@@ -182,6 +181,7 @@
       font-size: 17px;
     }
 
+    /* Cards */
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -219,19 +219,12 @@
       border: 1px solid #e5e7eb;
     }
 
-    .video-frame {
-      margin-top: 20px;
-      aspect-ratio: 16 / 9;
-      width: 100%;
-      background: #111827;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .video-frame iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
+    /* Course Brochure */
+    .brochure-box {
+      background: #f9fafb;
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid #e5e7eb;
     }
 
     /* Contact */
@@ -249,6 +242,7 @@
     .contact-list {
       list-style: none;
       margin-top: 20px;
+      margin-bottom: 24px;
     }
 
     .contact-list li {
@@ -274,7 +268,7 @@
       font-size: 15px;
     }
 
-    /* Mobile Responsive */
+    /* Mobile */
     @media (max-width: 900px) {
       .stats,
       .cards {
@@ -283,7 +277,7 @@
     }
 
     @media (max-width: 640px) {
-      nav a {
+      .top-menu a {
         margin: 6px 8px;
         font-size: 14px;
       }
@@ -324,39 +318,35 @@
 <body>
 
   <!-- Top Menu -->
-  
-<nav>
-  <button class="nav-button" onclick="goToSection('about')">About</button>
-  <button class="nav-button" onclick="goToSection('services')">Services</button>
-  <button class="nav-button" onclick="goToSection('portfolio')">Portfolio</button>
-  <button class="nav-button" onclick="goToSection('contact')">Contact</button>
-</nav>
+  <nav class="top-menu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
   <!-- Hero Banner -->
   <header class="hero">
 
-    <!-- Your photo file in GitHub must be named ALEX.jpg -->
     <img src="ALEX.jpg" alt="Alex Yiu" class="profile-photo" />
 
     <h1>Alex Yiu</h1>
 
-    <h2>
-      Generative AI Consultant | Trainer | Creative Innovation Specialist
-    </h2>
+    <h2>Generative AI Consultant | Trainer | Creative Innovation Specialist</h2>
 
     <p>
       Helping organisations create better content, videos and learning experiences with AI.
     </p>
 
     <div class="button-group">
-      <button class="btn" onclick="goToSection('contact')">Book a Workshop</button>
-      <button class="btn" onclick="goToSection('contact')">Schedule a Consultation</button>
+      <a href="#contact" class="btn">Book a Workshop</a>
+      <a href="#contact" class="btn">Schedule a Consultation</a>
     </div>
 
   </header>
 
   <!-- Data Section -->
-  <section class="stats-section" aria-label="Professional highlights">
+  <section class="stats-section">
 
     <div class="stats">
 
@@ -464,43 +454,31 @@
         Visit YouTube Channel
       </a>
 
-      <!--
-      Optional YouTube Embed
-
-      To embed a video:
-      1. Find a YouTube video URL, for example:
-         https://www.youtube.com/watch?v=ABC123XYZ
-
-      2. Copy the video ID:
-         ABC123XYZ
-
-      3. Replace YOUTUBE_VIDEO_ID below.
-
-      4. Remove this comment block and keep the iframe section.
-
-      <div class="video-frame">
-        https://www.youtube.com/embed/YOUTUBE_VIDEO_ID
-        </iframe>
-      </div>
-      -->
-
     </div>
 
   </section>
 
-  <!-- Course Brochure PDF -->
+  <!-- Course Brochure Section -->
   <section class="section">
 
     <h2>Course Brochure 課程簡介</h2>
 
-    <p>
-      Download the AI course catalogue for corporate training, school workshops, NGO programmes and creative AI sessions.
-    </p>
+    <div class="brochure-box">
 
-    <!-- Your PDF file in GitHub must be named AI_Course_Catalogue.pdf -->
-    AI_Course_Catalogue.pdf
-      Download Course Brochure PDF
-    </a>
+      <p>
+        Download the AI course catalogue for corporate training, school workshops, NGO programmes and creative AI sessions.
+      </p>
+
+      <a
+        href="AI_Course_Catalogue.pdf"
+        target="_blank"
+        rel="noopener"
+        class="btn"
+      >
+        Download Course Brochure PDF
+      </a>
+
+    </div>
 
   </section>
 
@@ -519,9 +497,7 @@
 
         <li>
           Email:
-          hello@alexyiu.com
-            hello@alexyiu.com
-          </a>
+          <a href="mailto:yiualexz@gmail.com">yiualexz@gmail.com</a>
         </li>
 
         <li>
@@ -537,14 +513,22 @@
 
         <li>
           LinkedIn:
-          https://www.linkedin.com/
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener"
+          >
             Add your LinkedIn profile URL here
           </a>
         </li>
 
         <li>
           WhatsApp:
-          https://wa.me/85291234567
+          <a
+            href="https://wa.me/85292061440"
+            target="_blank"
+            rel="noopener"
+          >
             Message Alex on WhatsApp
           </a>
         </li>
@@ -552,13 +536,20 @@
       </ul>
 
       <div class="button-group">
-        hello@alexyiu.com
+
+        <a href="mailto:yiualexa@gmail.com" class="btn">
           Contact Alex
         </a>
 
-        https://wa.me/85292061440
+        <a
+          href="https://wa.me/85292061440"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-outline"
+        >
           WhatsApp Alex
         </a>
+
       </div>
 
     </div>
