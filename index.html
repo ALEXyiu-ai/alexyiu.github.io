@@ -47,6 +47,14 @@
     .dark-section .lead, .dark-section .card p, .dark-section .card li { color: #d1d5db; }
     .dark-section .card { background: #111827; border-color: #334155; }
     .portfolio-box, .brochure-box { background: #f9fafb; border-radius: 16px; padding: 28px; border: 1px solid #e5e7eb; }
+    .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 28px; }
+    .video-card { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06); }
+    .video-frame { position: relative; width: 100%; padding-top: 56.25%; background: #000; }
+    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-card-body { padding: 18px 20px 22px; }
+    .video-card h3 { font-size: 18px; margin-bottom: 8px; line-height: 1.35; color: #0f172a; }
+    .video-card p { font-size: 15px; color: #4b5563; margin-bottom: 0; }
+    .portfolio-note { margin-top: 26px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 14px; padding: 20px 22px; }
     .client-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
     .client-list span { background: #f3f4f6; border: 1px solid #e5e7eb; border-radius: 999px; padding: 9px 14px; font-weight: 700; color: #374151; }
     .contact-box { background: #0f172a; color: #ffffff; border-radius: 18px; padding: 34px; }
@@ -55,9 +63,11 @@
     .contact-list li { margin-bottom: 13px; font-size: 17px; }
     .contact-list a { color: #93c5fd; text-decoration: none; word-break: break-word; }
     .contact-list a:hover { text-decoration: underline; }
+    .floating-whatsapp { position: fixed; right: 20px; bottom: 20px; z-index: 1200; background: #25D366; color: #ffffff; text-decoration: none; padding: 13px 16px; border-radius: 999px; font-weight: 800; box-shadow: 0 10px 28px rgba(0,0,0,.22); }
     footer { background: #111827; color: #ffffff; text-align: center; padding: 30px 20px; font-size: 14px; }
+    @media (max-width: 1000px) { .video-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 900px) { .stats, .cards, .cards.two { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 640px) { .top-menu a { margin: 5px 6px; font-size: 13px; } .hero { padding: 64px 18px; } .hero h1 { font-size: 37px; } .hero h2 { font-size: 18px; } .hero p { font-size: 16px; } .profile-photo { width: 124px; height: 124px; } .stats, .cards, .cards.two { grid-template-columns: 1fr; } .section { padding: 52px 18px; } }
+    @media (max-width: 640px) { .top-menu a { margin: 5px 6px; font-size: 13px; } .hero { padding: 64px 18px; } .hero h1 { font-size: 37px; } .hero h2 { font-size: 18px; } .hero p { font-size: 16px; } .profile-photo { width: 124px; height: 124px; } .stats, .cards, .cards.two, .video-grid { grid-template-columns: 1fr; } .section { padding: 52px 18px; } .floating-whatsapp { right: 14px; bottom: 14px; font-size: 14px; } }
   </style>
 </head>
 <body>
@@ -65,7 +75,7 @@
     <a href="#about">About</a>
     <a href="#expertise">Expertise</a>
     <a href="#programmes">Programmes</a>
-    <a href="#portfolio">Portfolio</a>
+    <a href="#portfolio">Reel Portfolio</a>
     <a href="#clients">Clients</a>
     <a href="#contact" class="menu-cta">Book a Workshop</a>
   </nav>
@@ -78,7 +88,7 @@
     <p>Helping educators, students, NGOs and organisations transform ideas into engaging AI-generated stories, trailers, reels and digital content through practical hands-on learning.</p>
     <div class="button-group">
       <a href="#contact" class="btn">Book a Workshop</a>
-      <a href="https://www.youtube.com/@AlexzYIU" target="_blank" rel="noopener" class="btn btn-outline">Watch AI Reel Portfolio</a>
+      <a href="#portfolio" class="btn btn-outline">Watch AI Reel Portfolio</a>
       <a href="https://www.linkedin.com/in/alex-yiu-ai/" target="_blank" rel="noopener" class="btn btn-outline">Connect on LinkedIn</a>
     </div>
   </header>
@@ -97,41 +107,15 @@
     <p class="lead">Alex Yiu is a Generative AI Consultant and Creative Technology Professional with 26+ years of experience in design, eLearning, digital innovation and AI-enabled content creation.</p>
     <p>Graduated from the School of Design at The Hong Kong Polytechnic University, Alex combines visual communication, learning technology and generative AI to help organisations unlock new possibilities in creativity, education and innovation.</p>
     <p>His recent focus is on practical Generative AI training, AI storytelling, AI reel production, AI video generation, prompt engineering and creative media workflows for schools, NGOs and corporate teams.</p>
-    <div class="highlight">
-      <strong>Positioning:</strong> Not just teaching AI tools, but guiding participants through the full creative journey from idea, prompt, storyboard, image generation and video creation to final AI-powered reels and trailers.
-    </div>
+    <div class="highlight"><strong>Positioning:</strong> Not just teaching AI tools, but guiding participants through the full creative journey from idea, prompt, storyboard, image generation and video creation to final AI-powered reels and trailers.</div>
   </section>
 
   <section id="expertise" class="section">
     <h2>Core Expertise</h2>
     <div class="cards">
-      <div class="card">
-        <h3>Generative AI Training</h3>
-        <ul>
-          <li>AI literacy and practical adoption</li>
-          <li>Prompt engineering for text, image and video</li>
-          <li>AI productivity and workplace applications</li>
-          <li>Responsible and ethical AI use</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>AI Creative Media</h3>
-        <ul>
-          <li>AI reels and short-form content</li>
-          <li>AI trailer and video production</li>
-          <li>AI storytelling and visual narrative</li>
-          <li>Creative workflow and content pipeline design</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Learning & Design</h3>
-        <ul>
-          <li>eLearning and learning experience design</li>
-          <li>UX, visual design and design thinking</li>
-          <li>Workshop facilitation and curriculum design</li>
-          <li>Education, youth and corporate training</li>
-        </ul>
-      </div>
+      <div class="card"><h3>Generative AI Training</h3><ul><li>AI literacy and practical adoption</li><li>Prompt engineering for text, image and video</li><li>AI productivity and workplace applications</li><li>Responsible and ethical AI use</li></ul></div>
+      <div class="card"><h3>AI Creative Media</h3><ul><li>AI reels and short-form content</li><li>AI trailer and video production</li><li>AI storytelling and visual narrative</li><li>Creative workflow and content pipeline design</li></ul></div>
+      <div class="card"><h3>Learning & Design</h3><ul><li>eLearning and learning experience design</li><li>UX, visual design and design thinking</li><li>Workshop facilitation and curriculum design</li><li>Education, youth and corporate training</li></ul></div>
     </div>
   </section>
 
@@ -151,57 +135,41 @@
   </div>
 
   <section id="portfolio" class="section">
-    <h2>AI Reel & Trailer Portfolio</h2>
-    <div class="portfolio-box">
-      <p>Alex actively experiments with different Generative AI applications to create AI trailers, reels, visual worlds and short-form video content. Selected examples include AI Tokyo Drifting, Ethan's Whisper, Enigma and fantasy-style AI trailer projects.</p>
-      <p>This portfolio demonstrates real creative AI production capability, not only classroom theory.</p>
-      <a href="https://www.youtube.com/@AlexzYIU" target="_blank" rel="noopener" class="btn">Visit YouTube Channel</a>
+    <h2>Featured AI Reel & Trailer Portfolio</h2>
+    <p class="lead">Selected AI storytelling, trailer production and creative media projects created using Generative AI tools. These videos demonstrate practical AI production capability, not only classroom theory.</p>
+    <div class="video-grid">
+      <div class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/MR_Y6nVFdT4" title="4K Gen-AI Trailer - Destruction" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-card-body"><h3>4K Gen-AI 預告片 - 毀天滅地</h3><p>AI cinematic trailer • disaster world-building • visual storytelling</p></div></div>
+      <div class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/VuX3I24BKe0" title="4K AI Tokyo Drifting" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-card-body"><h3>4K AI-Tokyo Drifting 東京飄移</h3><p>AI action reel • cinematic movement • urban visual style</p></div></div>
+      <div class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/m91AaEqBxck" title="Gen-AI Trailer Ethan's Whisper" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-card-body"><h3>Gen-AI Trailer: Ethan's Whisper</h3><p>AI storytelling • emotional narrative structure • trailer production</p></div></div>
+      <div class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/GUe2UNYkNM8" title="Enigma AI World" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-card-body"><h3>Enigma - Use Gen-AI Tools Create an Eerie World</h3><p>AI world-building • eerie atmosphere • visual concept development</p></div></div>
+      <div class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/nin-F-HLIAg" title="Magic China Dragon Guardian" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-card-body"><h3>Gen-AI 魔法中國：龍之守護者</h3><p>AI fantasy trailer • cultural visual style • character and world design</p></div></div>
+      <div class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/7nUzK6s7NLA" title="Magic College Guardians of Light" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><div class="video-card-body"><h3>Gen-AI Magic College: Guardians of Light</h3><p>AI fantasy storytelling • school setting • cinematic short-form production</p></div></div>
     </div>
+    <div class="portfolio-note"><strong>Training relevance:</strong> These projects can be converted into hands-on workshop exercises covering story ideation, scriptwriting, prompt design, image generation, video generation, music, voiceover and final reel assembly.</div>
+    <div style="text-align:center;margin-top:34px;"><a href="https://www.youtube.com/@AlexzYIU" target="_blank" rel="noopener" class="btn">View Full YouTube Portfolio</a></div>
   </section>
 
   <section id="clients" class="section">
     <h2>Representative Clients & Audiences</h2>
     <p class="lead">Training and speaking experience across schools, universities, NGOs, public organisations and corporate learning environments.</p>
-    <div class="client-list">
-      <span>Hong Kong Productivity Council</span>
-      <span>Hong Kong Baptist University</span>
-      <span>Harrow International School Hong Kong</span>
-      <span>Hong Kong Red Cross</span>
-      <span>Education Bureau Programmes</span>
-      <span>NGOs</span>
-      <span>Secondary Schools</span>
-      <span>Youth AI Programmes</span>
-      <span>Corporate Teams</span>
-    </div>
+    <div class="client-list"><span>Hong Kong Productivity Council</span><span>Hong Kong Baptist University</span><span>Harrow International School Hong Kong</span><span>Hong Kong Red Cross</span><span>Education Bureau Programmes</span><span>NGOs</span><span>Secondary Schools</span><span>Youth AI Programmes</span><span>Corporate Teams</span></div>
   </section>
 
   <section class="section">
     <h2>Course Brochure</h2>
-    <div class="brochure-box">
-      <p>Download the AI course catalogue for corporate training, school workshops, NGO programmes and creative AI sessions.</p>
-      <a href="AI_Course_Catalogue.pdf" target="_blank" rel="noopener" class="btn">Download Course Brochure PDF</a>
-    </div>
+    <div class="brochure-box"><p>Download the AI course catalogue for corporate training, school workshops, NGO programmes and creative AI sessions.</p><a href="AI_Course_Catalogue.pdf" target="_blank" rel="noopener" class="btn">Download Course Brochure PDF</a></div>
   </section>
 
   <section id="contact" class="section">
     <div class="contact-box">
       <h2>Book a Workshop or Consultation</h2>
       <p>Looking for a Generative AI trainer, keynote speaker or workshop facilitator? Let’s discuss how AI storytelling, AI reels and creative AI can support your learners or organisation.</p>
-      <ul class="contact-list">
-        <li>Email: <a href="mailto:yiualexz@gmail.com">yiualexz@gmail.com</a></li>
-        <li>WhatsApp / Mobile: <a href="https://wa.me/85292601440" target="_blank" rel="noopener">+852 9260 1440</a></li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/alex-yiu-ai/" target="_blank" rel="noopener">linkedin.com/in/alex-yiu-ai</a></li>
-        <li>YouTube: <a href="https://www.youtube.com/@AlexzYIU" target="_blank" rel="noopener">youtube.com/@AlexzYIU</a></li>
-      </ul>
-      <div class="button-group">
-        <a href="mailto:yiualexz@gmail.com" class="btn">Email Alex</a>
-        <a href="https://wa.me/85292601440" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp Alex</a>
-      </div>
+      <ul class="contact-list"><li>Email: <a href="mailto:yiualexz@gmail.com">yiualexz@gmail.com</a></li><li>WhatsApp / Mobile: <a href="https://wa.me/85292601440" target="_blank" rel="noopener">+852 9260 1440</a></li><li>LinkedIn: <a href="https://www.linkedin.com/in/alex-yiu-ai/" target="_blank" rel="noopener">linkedin.com/in/alex-yiu-ai</a></li><li>YouTube: <a href="https://www.youtube.com/@AlexzYIU" target="_blank" rel="noopener">youtube.com/@AlexzYIU</a></li></ul>
+      <div class="button-group"><a href="mailto:yiualexz@gmail.com" class="btn">Email Alex</a><a href="https://wa.me/85292601440" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp Alex</a></div>
     </div>
   </section>
 
-  <footer>
-    <p>© Alex Yiu | Generative AI Consultant • Creative AI Trainer • AI Storytelling & Reel Production Specialist</p>
-  </footer>
+  <a class="floating-whatsapp" href="https://wa.me/85292601440" target="_blank" rel="noopener">WhatsApp Alex</a>
+  <footer><p>© Alex Yiu | Generative AI Consultant • Creative AI Trainer • AI Storytelling & Reel Production Specialist</p></footer>
 </body>
 </html>
